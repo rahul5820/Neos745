@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Info Slider</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+    background-image: url('E:\NASA\1.jpeg');
+    background-size: cover;
+
+        }
+        .slider {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cards {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .card {
+            min-width: 40%;
+            box-sizing: border-box;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 0 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 50%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        .card-description {
+            color: #777;
+            margin: 10px 0;
+        }
+
+        .slider-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .slider-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    </style>
+</head>
+<body>
+<div class="slider">
+    <div class="cards">
+        <div class="card">
+            <img src="E:\NASA\image\mercury-removebg-preview.png" alt="Mercury">
+            <div class="card-content">
+                <h2 class="card-title">Mercury</h2>
+                <p class="card-description">Distance:211,780,087 Kilometers from Earth
+                    The smallest planet and closest to the Sun.
+                    Close Approach Dates:</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\Venus-removebg-preview.png" alt="Venus">
+            <div class="card-content">
+                <h2 class="card-title">Venus</h2>
+                <p class="card-description">Distance:200.05 million km from Earth
+                      The hottest planet with a thick atmosphere.
+                      Close Approach Dates:August 12, 2023</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\earth-removebg-preview.png" alt="Earth">
+            <div class="card-content">
+                <h2 class="card-title">Earth</h2>
+                <p class="card-description">The only planet known to support life.
+                    Close Approach Dates:2029-04-13
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\OSIRIS_Mars_true_color-removebg-preview.png" alt="Mars">
+            <div class="card-content">
+                <h2 class="card-title">Mars</h2>
+                <p class="card-description">The red planet with the tallest volcano.
+                    Distance:about 140 million miles
+                    The gases in Mars atmosphere:
+                    Carbon dioxide,Nitrogen,Argon,
+                    Oxygen,Carbon monoxide,Water,Methane
+                    Close Approach Dates: May 31
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\Jupiter_New_Horizons-removebg-preview.png" alt="Jupiter">
+            <div class="card-content">
+                <h2 class="card-title">Jupiter</h2>
+                <p class="card-description">The largest planet with a massive storm.
+                    Distance:688.01 million km
+                    The gases in Jupiter atmosphere:
+                    Hydrogen,Helium,Water, methane,
+                     hydrogen sulfide, and ammonia
+                     Close Approach Dates:December 6, 2024
+
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\saturn-removebg-preview.png" alt="Saturn">
+            <div class="card-content">
+                <h2 class="card-title">Saturn</h2>
+                <p class="card-description">Known for its stunning ring system.
+                    Distance:1.3107 billion km
+                    The gases in Saturn atmosphere:
+                    Hydrogen,Helium,Methane,
+                    Ammonia,Nitrogen,Oxygen
+                    Close Approach Dates:September 7-8, 2024
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="E:\NASA\image\urnus_-removebg-preview.png" alt="Uranus">
+            <div class="card-content">
+                <h2 class="card-title">Uranus</h2>
+                <p class="card-description">An ice giant with a tilted axis.
+                    Distance: 1.6 billion miles (2.6 billion kilometers) from Earth
+                    The gases in Uranus' atmosphere:
+                    Hydrogen,Helium,Methane
+                    Close Approach Dates:
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="slider-buttons">
+        <button class="slider-button" id="prevBtn">&#10094;</button>
+        <button class="slider-button" id="nextBtn">&#10095;</button>
+    </div>
+</div>
+
+<script>
+    const slider = document.querySelector('.cards');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    let currentIndex = 0;
+    const totalCards = document.querySelectorAll('.card').length;
+
+    nextBtn.addEventListener('click', () => {
+        if (currentIndex < totalCards - 1) {
+            currentIndex++;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    });
+</script>
+
+</body>
+</html>

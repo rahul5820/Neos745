@@ -1,0 +1,107 @@
+
+.about-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #0d1b2a; /* Dark space-themed background */
+    color: #ffffff; /* White text for contrast */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    text-align: center;
+  }
+  
+  /* Header section styling */
+  header {
+    margin-bottom: 40px;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+  }
+  
+  header p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 800px;
+    color: #d1d5db;
+  }
+  
+  /* Team section */
+  .team {
+    margin: 40px 0;
+  }
+  
+  .team h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  
+  /* Team member cards */
+  .team-members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .team-member {
+    background-color: rgba(255, 255, 255, 0.1); /* Transparent background */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Subtle depth for cards */
+    padding: 20px;
+    width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-10px); /* Lifts the card on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+  }
+  
+  .team-member h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .team-member h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #a9c5db;
+  }
+  
+  .team-member p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+  }
+  
+  /* Footer styling */
+  footer {
+    margin-top: 40px;
+  }
+  
+  footer p {
+    font-size: 1.1rem;
+    color: #d1d5db;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .team-members {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .team-member {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+  
